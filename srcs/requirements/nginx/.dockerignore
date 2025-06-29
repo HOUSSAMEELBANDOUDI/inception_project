@@ -1,0 +1,4 @@
+# ./srcs/requirements/nginx/.dockerignore
+**/*.tmp
+**/*.log
+

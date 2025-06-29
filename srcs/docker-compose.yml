@@ -1,0 +1,76 @@
+services:
+  mariadb:
+    build: 
+      context: ./requirements/maria_db
+      args:
+        - DATABASE_NAME
+        - DATABASE_USER
+        - DATABASE_USER_PASSWORD
+        - DATABASE_ROOT
+        - DATABASE_ROOT_PASSWORD
+    env_file:
+      - .env
+    networks:
+      - inception
+    volumes:
+      - maria_db:/var/lib/mysql:z  # Added :z for SELinux context
+    restart: always
+  
+  wordpress:
+    build: 
+      context: ./requirements/wordpress
+      args:
+        - DOMAIN_NAME
+        - DATABASE_NAME
+        - DATABASE_USER
+        - DATABASE_USER_PASSWORD
+        - WP_ROOT_USER
+        - WP_ROOT_EMAIL
+        - WP_ROOT_PASSWORD
+        - WP_USER
+        - WP_EMAIL
+        - WP_PASSWORD
+    env_file:
+      - .env
+    depends_on:
+      - mariadb
+    networks:
+      - inception
+    volumes:
+      - wordpress:/var/www/wordpress:z  # Added :z for SELinux context
+    restart: always
+
+  nginx:
+    build:
+      context: ./requirements/nginx
+    ports:
+      - "443:443"
+    env_file:
+      - .env
+    depends_on:
+      - wordpress
+    volumes:
+      - wordpress:/var/www/wordpress:z  # Added :z for SELinux context
+    networks:
+      - inception
+    restart: always
+
+networks:
+  inception:
+    driver: bridge
+    name: inception
+
+volumes:
+  maria_db:
+    driver: local
+    driver_opts:
+      device: /home/hel-band/data/maria_db
+      type: none
+      o: bind
+  wordpress:
+    driver: local
+    driver_opts:
+      device: /home/hel-band/data/wordpress
+      type: none
+      o: bind
+
