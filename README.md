@@ -40,38 +40,30 @@ docker exec -it <container_name> <command>         # Run interactively inside co
 docker exec -it <container_name> sh                # Get a root shell inside a container
 
 
-📚 Useful Resources
-🐋 Docker
-Docker Curriculum
+## 📚 Useful Resources
 
-Dockerfile Reference
+### 🐋 Docker
+- [Docker Curriculum](https://docker-curriculum.com/)
+- [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
+- [How to Debug a Docker Compose Build](https://docs.docker.com/compose/reference/)
 
-How to Debug a Docker Compose Build
+### 🏔️ Alpine Linux
+- [Alpine Linux](https://alpinelinux.org/)
 
-🏔️ Alpine Linux
-Alpine Linux
+### 🌐 Nginx
+- [NGINX Beginner’s Guide](https://nginx.org/en/docs/beginners_guide.html)
+- [OpenSSL Man Page](https://www.openssl.org/docs/man1.1.1/man1/openssl.html)
+- [Generate Self-Signed SSL Certificate](https://www.openssl.org/)
 
-🌐 Nginx
-NGINX Beginner’s Guide
+### 🛢️ MariaDB
+- [Find MySQL `my.cnf` Location](https://mariadb.com/kb/en/configuring-mariadb-with-option-files/)
+- [Install and Configure MariaDB](https://mariadb.com/kb/en/installing-and-using-mariadb/)
+- [MariaDB Server System Variables](https://mariadb.com/kb/en/server-system-variables/)
+- [Remote Access to MariaDB](https://phoenixnap.com/kb/mariadb-allow-remote-access)
 
-OpenSSL Man Page
+### 📝 WordPress
+- [PHP Official Website](https://www.php.net/)
+- [Installing WordPress with curl and WP-CLI](https://developer.wordpress.org/cli/)
+- [WP-CLI Commands](https://developer.wordpress.org/cli/commands/)
+- [WP-CLI Overview](https://wp-cli.org/)
 
-Generate Self-Signed SSL Certificate
-
-🛢️ MariaDB
-Find MySQL my.cnf Location
-
-Install and Configure MariaDB
-
-MariaDB Server System Variables
-
-Remote Access to MariaDB
-
-📝 WordPress
-PHP Official Website
-
-Installing WordPress with curl and WP-CLI
-
-WP-CLI Commands
-
-WP-CLI Overview
